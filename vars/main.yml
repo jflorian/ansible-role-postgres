@@ -36,7 +36,6 @@ _postgres_dir:
   default: /var/lib/pgsql/data
   Alpine: /var/lib/pgsql
   Debian: /var/lib/postgresql/{{ postgres_version }}
-postgres_dir: "{{ _postgres_dir[ansible_os_family] | default(_postgres_dir['default']) }}"
 
 # The default postgres configuration directory for each distribution differs.
 # This map is used to determine the correct directory for each distribution.

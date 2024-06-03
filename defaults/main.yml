@@ -14,6 +14,10 @@ postgres_datestyle: iso, ymd
 postgres_timezone: UTC
 postgres_default_text_search_config: pg_catalog.english
 
+# The directory to contain the database.  Only needs to be set if using
+# a non-standard location.
+postgres_dir: "{{ _postgres_dir[ansible_os_family] | default(_postgres_dir['default']) }}"
+
 postgres_hba_entries:
   - type: local
     database: all
